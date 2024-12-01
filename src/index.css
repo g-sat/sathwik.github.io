@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  body.light {
+    @apply bg-light-background text-light-text;
+  }
+
+  body.light .theme-content {
+    @apply bg-light-background text-light-text;
+  }
+
+  body.light .theme-card {
+    @apply bg-light-surface text-light-text;
+  }
+
+  body.light .theme-input {
+    @apply bg-light-surface border-light-text/20 text-light-text;
+  }
+
+  body.dark {
+    @apply bg-dark-background text-dark-text;
+  }
+
+  body.dark .theme-content {
+    @apply bg-dark-background text-dark-text;
+  }
+
+  body.dark .theme-card {
+    @apply bg-dark-surface text-dark-text;
+  }
+
+  body.dark .theme-input {
+    @apply bg-dark-surface border-dark-text/20 text-dark-text;
+  }
+
+  body.astra {
+    @apply bg-astra-background text-astra-text;
+  }
+
+  body.astra .theme-content {
+    @apply bg-astra-background text-astra-text;
+  }
+
+  body.astra .theme-card {
+    @apply bg-astra-surface text-astra-text;
+  }
+
+  body.astra .theme-input {
+    @apply bg-astra-surface border-astra-text/20 text-astra-text;
+  }
+}
+
+@layer components {
+  .astra-gradient {
+    @apply bg-gradient-to-r from-astra-primary via-astra-secondary to-astra-accent;
+  }
+
+  .astra-text {
+    @apply font-bold tracking-wider text-transparent bg-clip-text astra-gradient animate-cosmic-pulse;
+  }
+
+  .astra-border {
+    @apply border-2 border-astra-primary shadow-lg shadow-astra-primary/50 animate-nebula-glow;
+  }
+
+  .astra-card {
+    @apply relative bg-astra-surface astra-border rounded-lg overflow-hidden;
+  }
+
+  .astra-button {
+    @apply px-6 py-3 bg-astra-primary text-white rounded-lg 
+           hover:bg-astra-secondary hover:text-white
+           transition-all duration-300 transform hover:scale-105
+           shadow-lg shadow-astra-primary/50;
+  }
+
+  .theme-transition {
+    @apply transition-all duration-300;
+  }
+
+  .theme-button {
+    @apply px-6 py-3 rounded-lg transition-all duration-300;
+  }
+
+  .theme-button-primary {
+    @apply theme-button;
+    @apply light:bg-light-primary light:text-white light:hover:bg-light-primary/90;
+    @apply dark:bg-dark-primary dark:text-white dark:hover:bg-dark-primary/90;
+    @apply astra:bg-astra-primary astra:text-white astra:hover:bg-astra-primary/90;
+  }
+}
